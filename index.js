@@ -36,7 +36,7 @@ restService.post("/echo", function(req, res) {
   
   let response = "This is a sample response from your webhook!";//Default response from the webhook to show it’s working
   let responseObj={
-     "fulfillmentText":req.body.queryResult.queryText
+     "fulfillmentText":"Ustadim,"+req.body.queryResult.queryText
     ,"fulfillmentMessages":[
         {
             "text": {
