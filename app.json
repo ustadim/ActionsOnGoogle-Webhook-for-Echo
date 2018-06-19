@@ -1,0 +1,6 @@
+{
+  "name": "ActionsOnGoogle-Webhook-for-Echo",
+  "description": "Example app for echo service using webhook",
+  "repository": "https://github.com/ustadim/ActionsOnGoogle-Webhook-for-Echo.git",
+  "keywords": ["actions on google", "webhook", "nodejs", "api.ai", "dialogflow", "natural language"]
+}
