@@ -14,6 +14,19 @@ restService.use(
 restService.use(bodyParser.json());
 
 restService.post("/echo", function(req, res) {
+  /*var speech =
+    req.body.result &&
+    req.body.result.parameters &&
+    req.body.result.parameters.echoText
+      ? "### Ustadim, Echo server says:"+req.body.result.parameters.echoText
+      : "Seems like some problem. Speak again.";
+   
+  return res.json({
+     speech: speech,
+     displayText: speech,
+    source: "webhook-echo-sample"
+  });
+  */
   var speech =
     req.body.result &&
     req.body.result.parameters &&
@@ -28,7 +41,7 @@ restService.post("/echo", function(req, res) {
         {
             "text": {
                 "text": [
-                    "Hello I m Responding to intent"
+                    "2-"+speech+"-2"
                 ]
             }
         }
@@ -38,11 +51,7 @@ restService.post("/echo", function(req, res) {
 return res.json(responseObj);
 
 
- // return res.json({
- //   speech: speech,
- //   displayText: speech,
- //   source: "webhook-echo-sample"
- // });
+  
 });
 
 restService.listen(process.env.PORT || 8000, function() {
