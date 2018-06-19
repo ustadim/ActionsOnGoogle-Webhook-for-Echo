@@ -20,11 +20,29 @@ restService.post("/echo", function(req, res) {
     req.body.result.parameters.echoText
       ? "### Ustadim, Echo server says:"+req.body.result.parameters.echoText
       : "Seems like some problem. Speak again.";
-  return res.json({
-    speech: speech,
-    displayText: speech,
-    source: "webhook-echo-sample"
-  });
+  
+  let response = "This is a sample response from your webhook!";//Default response from the webhook to show it’s working
+  let responseObj={
+     "fulfillmentText":speech
+    ,"fulfillmentMessages":[
+        {
+            "text": {
+                "text": [
+                    "Hello I m Responding to intent"
+                ]
+            }
+        }
+    ]
+    ,"source":""
+}
+return res.json(responseObj);});
+
+
+ // return res.json({
+ //   speech: speech,
+ //   displayText: speech,
+ //   source: "webhook-echo-sample"
+ // });
 });
 
 restService.listen(process.env.PORT || 8000, function() {
