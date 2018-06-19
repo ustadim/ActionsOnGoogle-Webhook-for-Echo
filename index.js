@@ -35,7 +35,7 @@ restService.post("/echo", function(req, res) {
     ]
     ,"source":""
 }
-return res.json(responseObj);});
+return res.json(responseObj);
 
 
  // return res.json({
