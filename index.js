@@ -28,15 +28,15 @@ restService.post("/echo", function(req, res) {
   });
   */
   var speech =
-    req.body.result &&
-    req.body.result.parameters &&
-    req.body.result.parameters.echoText
-      ? "### Ustadim, Echo server says:"+req.body.result.parameters.echoText
+    req.body.queryResult &&
+    req.body.queryResult.queryText &&
+    req.body.queryResult.parameters.echoText
+      ? "### Ustadim, Echo server says:"+req.body.queryResult.parameters.echoText
       : "Seems like some problem. Speak again.";
   
   let response = "This is a sample response from your webhook!";//Default response from the webhook to show it’s working
   let responseObj={
-     "fulfillmentText":speech
+     "fulfillmentText":req.body.queryResult.queryText
     ,"fulfillmentMessages":[
         {
             "text": {
